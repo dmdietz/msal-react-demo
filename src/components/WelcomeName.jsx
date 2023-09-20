@@ -10,7 +10,7 @@ export const WelcomeName = () => {
         const currentAccount = instance.getActiveAccount();
 
         if (currentAccount) {
-            setName(currentAccount.username);
+            setName(currentAccount.name);
         }
     }, [instance]);
 
