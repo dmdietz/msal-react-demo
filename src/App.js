@@ -27,7 +27,7 @@ const Pages = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-        // TODO: grab the username from query params
+      // TODO: grab the username from query params
       instance
         .ssoSilent({
           scopes: ["user.read"],
@@ -37,11 +37,11 @@ const Pages = () => {
           instance.setActiveAccount(response.account);
         })
         .catch((error) => {
-            if (error instanceof InteractionRequiredAuthError) {
-                instance.loginRedirect({
-                    scopes: ["user.read"]
-                });
-            }
+          if (error instanceof InteractionRequiredAuthError) {
+            instance.loginRedirect({
+              scopes: ["user.read"],
+            });
+          }
         });
     }
   }, [instance, isAuthenticated]);
